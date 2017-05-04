@@ -1,0 +1,114 @@
+activecomp {
+  name: "HelloWorld_MainComp"
+  width: 1280
+  height: 960
+  defaultcameradistance: 1777.7778
+  layer {
+    name: "dog"
+    id: 1
+    sourceid: 317
+    transform {
+      anchorPoint {
+        x: 268.5
+        y: 264.5
+        z: 0
+      }
+      scale {
+        x: 1.1191806
+        y: 1.120983
+        z: 1
+      }
+      position {
+        x: 640
+        y: 1262
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
+  layer {
+    name: "SUCH YOU.i. MUCH WOW"
+    id: 2
+    sourceid: -1
+    transform {
+      anchorPoint {
+        x: 0
+        y: 0
+        z: 0
+      }
+      scale {
+        x: 2
+        y: 2
+        z: 1
+      }
+      position {
+        x: -500
+        y: 200
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+    textinfo {
+      justification: AE_TEXT_LEFT
+      fontSize: 36
+      fontColor {
+        alpha: 1
+        red: 0.92156898975372314
+        green: 0.92156898975372314
+        blue: 0.92156898975372314
+      }
+      fontName: "Helvetica"
+      isPointText: true
+      isLabel: true
+      text: "SUCH YOU.i.\rMUCH WOW"
+      multiline: false
+      isAllCaps: false
+    }
+  }
+  bgcolor {
+    alpha: 1
+    red: 0
+    green: 0
+    blue: 0
+  }
+}
+sources {
+  uid: 317
+  srctype: AE_IMAGE_SRC
+  name: "dog.png"
+  width: 537
+  height: 529
+  numberOfFrames: 1
+  fps: 0
+  loops: 1
+  copy_source: true
+}
+sources {
+  uid: 2
+  srctype: AE_FONT_SRC
+  name: "Helvetica"
+  copy_source: true
+  file_name: "yi_Helvetica-Regular_Helvetica.dfont"
+}

@@ -1,0 +1,6 @@
+/Users/danforstinger/youi/Apps/HelloDoge/build/osx/CMakeFiles/CleanAssets.dir
+/Users/danforstinger/youi/Apps/HelloDoge/build/osx/CMakeFiles/CopyAssets.dir
+/Users/danforstinger/youi/Apps/HelloDoge/build/osx/CMakeFiles/ProcessLocalizationData.dir
+/Users/danforstinger/youi/Apps/HelloDoge/build/osx/CMakeFiles/HelloWorld.dir
+/Users/danforstinger/youi/Apps/HelloDoge/build/osx/CMakeFiles/ALL_BUILD.dir
+/Users/danforstinger/youi/Apps/HelloDoge/build/osx/CMakeFiles/ZERO_CHECK.dir
