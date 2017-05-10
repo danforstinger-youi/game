@@ -21,7 +21,7 @@ public:
      \details This can be used to create entities.
      */
     template <class T>
-    static T* Instantiate(const CYIString& name, CYISceneView* surface)
+    static T* Instantiate(const CYIString& name, CYISceneView* surface, YI_INT32 x, YI_INT32 y)
     {
         
         T* controller = new T();
@@ -41,6 +41,8 @@ public:
         surface->AddChild(pPrefab);
         
         entity->SetView(pPrefab);
+        
+        entity->SetPosition(x,y);
         
         entity->Init();
         

@@ -44,8 +44,9 @@ bool GameApp::UserInit()
     GetSceneManager()->AddScene("MainComp", m_pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
     
 
-    Player* pPlayer = EntityFactory::Instantiate<Player>("Game_Player", m_pSceneViewMain);
+    Player* pPlayer = EntityFactory::Instantiate<Player>("Game_Player", m_pSceneViewMain, 2, 4);
 
+    
     YI_UNUSED(pPlayer);
     return true;
 

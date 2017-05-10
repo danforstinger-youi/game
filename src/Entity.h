@@ -24,6 +24,8 @@ public:
      */
     virtual bool Init() = 0;
 
+    void SetPosition(YI_INT32 x, YI_INT32 y);
+    
 protected:
     
     CYISceneView* m_pView;

@@ -18,6 +18,8 @@ class MovingEntity : public Entity
      */
     virtual bool Init();
 
+    void Move(YI_INT32 x, YI_INT32 y);
+
 };
 
 #endif /* Entity_h */
