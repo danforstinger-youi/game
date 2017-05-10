@@ -26,9 +26,19 @@ public:
 
     void SetPosition(YI_INT32 x, YI_INT32 y);
     
+    YI_INT32 GetX() { return m_x;}
+    
+    YI_INT32 GetY() { return m_y;}
+    
 protected:
     
     CYISceneView* m_pView;
+
+private:
+    
+    YI_INT32 m_x;
+    
+    YI_INT32 m_y;
 };
 
 #endif /* Entity_h */

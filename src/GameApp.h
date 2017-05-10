@@ -1,10 +1,10 @@
 // © You i Labs Inc. 2000-2017. All rights reserved.
-#ifndef _HELLO_WORLD_APP_H_
-#define _HELLO_WORLD_APP_H_
+#ifndef _GAME_APP_H_
+#define _GAME_APP_H_
 
 #include <framework/YiApp.h>
 #include <signal/YiSignalHandler.h>
-
+#include "TurnManager.h"
 #include "Entity.h"
 
 class CYISceneView;
@@ -38,9 +38,13 @@ public:
      */
     virtual bool UserStart();
 
-
+    TurnManager* GetTurnManager();
     
 private:
+    
+    GameApp * m_pInstance;
+    
+    TurnManager * m_pTurnManager;
     
     CYISceneView * m_pSceneViewMain;
 };

@@ -12,11 +12,18 @@ static const CYIString LOG_TAG("GameApp");
 
 GameApp::GameApp()
 {
-    
+    m_pInstance = this;
+    m_pTurnManager = new TurnManager();
 }
 
 GameApp::~GameApp()
 {
+    delete m_pSceneViewMain;
+    m_pSceneViewMain = YI_NULL;
+    
+    delete m_pTurnManager;
+    m_pTurnManager = YI_NULL;
+    
 }
 
 bool GameApp::UserInit()
@@ -39,7 +46,6 @@ bool GameApp::UserInit()
         return false;
     }
     
-    
     // Add the scene to the SceneManager with a layer index of 0, since this is the only scene the layer index isn't important.
     GetSceneManager()->AddScene("MainComp", m_pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
     
@@ -56,6 +62,11 @@ bool GameApp::UserInit()
 bool GameApp::UserStart()
 {
     return true;
+}
+
+TurnManager* GameApp::GetTurnManager()
+{
+    return m_pInstance->m_pTurnManager;
 }
 
 /*! @} */

@@ -21,8 +21,14 @@ void Entity::SetView(CYISceneView* view)
 
 void Entity::SetPosition(YI_INT32 x, YI_INT32 y)
 {
+    //store our new position
+    m_x = x;
+    m_y = y;
+    
+    //convert it to screen space.
     YI_FLOAT convX = static_cast<YI_FLOAT>(CoordinateConverter::CoordinateToPixels(x));
     YI_FLOAT convY = static_cast<YI_FLOAT>(CoordinateConverter::CoordinateToPixels(y));
     
+    //set the position of our view.
     m_pView->SetPosition(convX, convY, 0);
 }
