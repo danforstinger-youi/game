@@ -6,9 +6,9 @@
 //
 //
 
-#include "Player.h"
+#include "MovingEntity.h"
 
-bool Player::Init()
+bool MovingEntity::Init()
 {
     return true;
 }

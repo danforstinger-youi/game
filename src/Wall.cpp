@@ -7,3 +7,8 @@
 //
 
 #include "Wall.h"
+
+bool Wall::Init()
+{
+    return true;
+}

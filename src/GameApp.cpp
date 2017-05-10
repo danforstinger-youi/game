@@ -6,14 +6,13 @@
 #include <view/YiSceneView.h>
 #include <appium/YiWebDriverLocator.h>
 #include "Player.h"
-#include <asset/YiAssetViewTemplate.h>
-#include <import/YiViewTemplate.h>
-#include <view/YiImageView.h>
+#include "EntityFactory.h"
 
 static const CYIString LOG_TAG("GameApp");
 
 GameApp::GameApp()
 {
+    
 }
 
 GameApp::~GameApp()
@@ -45,7 +44,7 @@ bool GameApp::UserInit()
     GetSceneManager()->AddScene("MainComp", m_pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
     
 
-    CYISceneView* pPlayer = BuildPrefab("Game_Player");
+    Player* pPlayer = EntityFactory::Instantiate<Player>("Game_Player", m_pSceneViewMain);
 
     YI_UNUSED(pPlayer);
     return true;
@@ -56,18 +55,6 @@ bool GameApp::UserInit()
 bool GameApp::UserStart()
 {
     return true;
-}
-
-
-CYISceneView* GameApp::BuildPrefab(const CYIString& name)
-{
-    const CYISharedPtr<CYIAssetViewTemplate> pTemplate = CYIViewTemplate::GetViewTemplate(name);
-    
-    CYISceneView* pPrefab = pTemplate->BuildView(GetSceneManager());
-    
-    m_pSceneViewMain->AddChild(pPrefab);
-    
-    return pPrefab;
 }
 
 /*! @} */

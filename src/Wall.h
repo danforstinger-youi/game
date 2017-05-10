@@ -17,8 +17,6 @@ class Wall : public CYISceneView
      \details This will be called during initialization, this is where custom views will initialize themselves.
      */
     virtual bool Init();
-    
-    YI_TYPE_BASES(Wall, CYISceneView);
 };
 
 #endif /* Wall_h */

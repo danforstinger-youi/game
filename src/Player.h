@@ -11,14 +11,14 @@
 
 #include "view/YiSceneView.h"
 #include "Entity.h"
+
 class Player : public Entity
 {
     /*!
      \details This will be called during initialization, this is where custom views will initialize themselves.
      */
     virtual bool Init();
-    
-    YI_TYPE_BASES(Player, Entity);
+
 };
 
 #endif /* Player_h */

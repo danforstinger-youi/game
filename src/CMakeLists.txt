@@ -13,7 +13,10 @@ set (YI_SRC_FILES
     ${YI_REL_SRC_DIR}/GameApp.cpp
     ${YI_REL_SRC_DIR}/GameAppFactory.cpp
     ${YI_REL_SRC_DIR}/Entity.cpp
+    ${YI_REL_SRC_DIR}/Player.cpp
+    ${YI_REL_SRC_DIR}/MovingEntity.cpp
     ${YI_REL_SRC_DIR}/Wall.cpp
+    ${YI_REL_SRC_DIR}/EntityFactory.cpp
 )
 
 set(YI_REL_PATH_TO_ROOT ../youiengine)

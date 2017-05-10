@@ -6,27 +6,18 @@
 //
 //
 
-#ifndef Entity_h
-#define Entity_h
+#ifndef MovingEntity_h
+#define MovingEntity_h
 
-#include <view/YiSceneView.h>
+#include "Entity.h"
 
-class Entity
+class MovingEntity : public Entity
 {
-public:
-    
-    Entity();
-
-    void SetView(CYISceneView* view);
-    
     /*!
      \details This will be called during initialization, this is where custom views will initialize themselves.
      */
-    virtual bool Init() = 0;
+    virtual bool Init();
 
-protected:
-    
-    CYISceneView* m_pView;
 };
 
 #endif /* Entity_h */
