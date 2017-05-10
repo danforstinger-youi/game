@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest >
   <asset-bundle root-dir="../AE/assets">
-    <layout filename="HelloWorld_MainComp.layout"/>
+    <layout filename="Game_MainComp.layout"/>
+    <layout filename="Game_Prefab.layout"/>
   </asset-bundle>
 </manifest>
