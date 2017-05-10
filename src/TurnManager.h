@@ -16,6 +16,11 @@ class TurnManager
 public:
     
     TurnManager();
+    
+    void FinishTurn();
+    
+    CYISignal<> BeginTurn;
+
 };
 
 #endif /* Wall_h */

@@ -12,3 +12,8 @@ TurnManager::TurnManager()
 {
     
 }
+
+void TurnManager::FinishTurn()
+{
+    BeginTurn();
+}

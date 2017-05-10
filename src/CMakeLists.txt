@@ -20,7 +20,7 @@ set (YI_SRC_FILES
     ${YI_REL_SRC_DIR}/CoordinateConverter.cpp
     ${YI_REL_SRC_DIR}/Level.cpp
     ${YI_REL_SRC_DIR}/TurnManager.cpp
-    ${YI_REL_SRC_DIR}/InputManager.cpp
+    ${YI_REL_SRC_DIR}/Monster.cpp
 )
 
 set(YI_REL_PATH_TO_ROOT ../youiengine)
