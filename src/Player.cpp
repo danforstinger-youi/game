@@ -16,7 +16,7 @@ bool Player::Init()
     
     YI_LOGI("Player", "Init complete");
 
-    InputManager::GetInstance()->OnKeyDown.Connect(*this, &Player::OnKey);
+    InputManager::GetInstance()->OnKey.Connect(*this, &Player::OnKey);
     
     return true;
 }
