@@ -16,10 +16,10 @@ Level::Level(CYISceneView *pSceneView)
 {
     m_pSceneView = pSceneView;
     
-    int squareWidth = 7;
-    
     glm::vec3 initialPosition(0, 0, 0);
     glm::vec3 playerStartingPosition(3, 3, 3);
+    
+    const int squareWidth = 8;
     
     for (int x = 0; x < squareWidth; ++x)
     {
@@ -34,7 +34,7 @@ Level::Level(CYISceneView *pSceneView)
 
     }
     
-    for (int y = 1; y < squareWidth - 1; ++y)
+    for (int y = 1; y < squareWidth- 1; ++y)
     {
         int minX = 0;
         int maxX = squareWidth-1;
