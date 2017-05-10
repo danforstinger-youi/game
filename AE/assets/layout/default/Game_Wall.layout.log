@@ -37,16 +37,11 @@ activecomp {
     acceptslights: true
     castsshadows: false
   }
-  classname: "CYIImageView"
   bgcolor {
     alpha: 1
     red: 0
     green: 0.48627450980392156
     blue: 0.73725490196078436
-  }
-  properties {
-    key: "componentType"
-    value: "image"
   }
 }
 sources {
