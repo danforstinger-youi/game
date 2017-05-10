@@ -7,3 +7,13 @@
 //
 
 #include "Entity.h"
+
+Entity::Entity() : m_pView(YI_NULL)
+{
+    
+}
+
+void Entity::SetView(CYISceneView* view)
+{
+    m_pView = view;
+}

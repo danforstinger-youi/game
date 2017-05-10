@@ -6,9 +6,4 @@
 //
 //
 
-#include "Player.h"
-
-bool Player::Init()
-{
-    return true;
-}
+#include "EntityFactory.h"

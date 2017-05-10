@@ -5,6 +5,8 @@
 #include <framework/YiApp.h>
 #include <signal/YiSignalHandler.h>
 
+#include "Entity.h"
+
 class CYISceneView;
 
 /*!
@@ -22,6 +24,7 @@ class GameApp : public CYIApp, public CYISignalHandler
 {
 public:
     GameApp();
+    
     virtual ~GameApp();
     
     /*!
@@ -35,9 +38,10 @@ public:
      */
     virtual bool UserStart();
 
-    CYISceneView* BuildPrefab(const CYIString& name);
+
     
 private:
+    
     CYISceneView * m_pSceneViewMain;
 };
 
