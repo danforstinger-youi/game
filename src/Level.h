@@ -25,6 +25,7 @@ public:
     
     void MovePlayer(int xMovement, int yMovement);
     
+    Player* GetPlayer() { return m_pPlayer; }
 private:
     CYISceneView *m_pSceneView;
     Player *m_pPlayer;
