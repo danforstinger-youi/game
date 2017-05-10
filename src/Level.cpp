@@ -16,12 +16,6 @@ Level::Level(CYISceneView *pSceneView)
 {
     m_pSceneView = pSceneView;
 
-    GenerateLevel();
-}
-
-void Level::MovePlayer(int xMovement, int yMovement)
-{
-    m_pPlayer->AttemptMove(xMovement, yMovement);
 }
 
 void Level::GenerateLevel()
@@ -29,12 +23,8 @@ void Level::GenerateLevel()
     char tileCharacter = 0;
     
     const char *path = "assets/level.txt";
-
-    std::FILE *pFile = std::fopen(path, "r");
-    YI_ASSERT(pFile, "Level::Level", "Could not open %s", "level.txt");
     
     std::fstream levelFile(path);
-    
     std::stringstream buffer;
     buffer << levelFile.rdbuf();
     std::string contents(buffer.str());
@@ -47,7 +37,7 @@ void Level::GenerateLevel()
     while(index < contents.length())
     {
         tileCharacter = contents[index];
-    
+        
         switch (tileCharacter)
         {
             default: case '\n':
@@ -76,7 +66,11 @@ void Level::GenerateLevel()
         
         ++index;
     }
+}
 
+void Level::Init()
+{
+    GenerateLevel();
 }
 
 glm::vec3 Level::IncrementX(glm::vec3 position)
@@ -109,4 +103,45 @@ void Level::CreateMonster(glm::vec3 position)
 void Level::CreatePlayer(glm::vec3 position)
 {
     m_pPlayer = EntityFactory::Instantiate<Player>(PLAYER_PREFAB_NAME, m_pSceneView, position[0], position[1]);
+}
+
+void Level::AddEntityToLevel(Entity* entity)
+{
+    m_levelEntities.push_back(entity);
+}
+
+std::vector<Entity*> Level::GetEntitiesAtPosition(YI_INT32 posX, YI_INT32 posY)
+{
+    std::vector<Entity*> foundEntites;
+    auto iter = m_levelEntities.begin();
+    auto end = m_levelEntities.end();
+    
+    while (iter != end)
+    {
+        if(*iter != YI_NULL && (*iter)->GetX() == posX && (*iter)->GetY() == posY)
+        {
+            foundEntites.push_back(*iter);
+        }
+        iter++;
+    }
+    
+    return foundEntites;
+}
+
+
+std::vector<Entity*> Level::CheckCollisionAtPos(YI_INT32 posX, YI_INT32 posY)
+{
+    std::vector<Entity*> foundEntites = GetEntitiesAtPosition(posX, posY);
+    auto iter = foundEntites.begin();
+    auto end = foundEntites.end();
+    
+    while (iter != end)
+    {
+        if(*iter != YI_NULL && !(*iter)->GetIsCollidable())
+        {
+            foundEntites.erase(iter);
+        }
+        iter++;
+    }
+    return foundEntites;
 }

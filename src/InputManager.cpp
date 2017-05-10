@@ -45,19 +45,38 @@ bool InputManager::HandleEvent (const CYISharedPtr< CYIEventDispatcher > &pDispa
         
         OnKey(keyEvent->m_eKeyCode);
         
-        if(keyEvent->GetType() == YI_KEY_UP)
+        if(keyEvent->GetType() == YI_KEY_UP && IsKeyDown(keyCode))
         {
-           OnKeyUp(keyCode);
+            OnKeyUp(keyCode);
+            SetKeyUp(keyCode);
         }
-        else if(keyEvent->GetType() == YI_KEY_DOWN)
+        else if(keyEvent->GetType() == YI_KEY_DOWN && !IsKeyDown(keyCode))
         {
-           OnKeyDown(keyCode);
-           OnKey(keyCode);
+            OnKeyDown(keyCode);
+            SetKeyDown(keyCode);
         }
-        else OnKey(keyCode);
+        else
+        {
+            OnKey(keyCode);
+        }
         
         return true;
     }
     
     return false;
+}
+
+void InputManager::SetKeyDown(YI_KEY_CODE keyCode)
+{
+    m_downKeys.insert(keyCode);
+}
+
+bool InputManager::IsKeyDown(YI_KEY_CODE keyCode)
+{
+    return m_downKeys.count(keyCode) > 0;
+}
+
+void InputManager::SetKeyUp(YI_KEY_CODE keyCode)
+{
+    m_downKeys.erase(keyCode);
 }

@@ -27,8 +27,9 @@ public:
     void SetPosition(YI_INT32 x, YI_INT32 y);
     
     YI_INT32 GetX() { return m_x;}
-    
     YI_INT32 GetY() { return m_y;}
+    bool GetIsCollidable() { return m_isCollidable; }
+    void SetIsCollidable(bool isCollidable) { m_isCollidable = isCollidable; }
     
 protected:
     
@@ -37,8 +38,8 @@ protected:
 private:
     
     YI_INT32 m_x;
-    
     YI_INT32 m_y;
+    bool m_isCollidable;
 };
 
 #endif /* Entity_h */

@@ -1,5 +1,5 @@
 //
-//  InputManager.hpp
+//  InputManager.h
 //  Game
 //
 //  Created by Brad Hill on 2017-05-10.
@@ -12,11 +12,13 @@
 #include <framework/YiApp.h>
 #include <event/YiEventHandler.h>
 #include <signal/YiSignal.h>
+#include <unordered_set>
 
 class InputManager : public CYIEventHandler
 {
 public:
     InputManager(CYIApp* pApp);
+    //virtual ~InputManager();
     
     static InputManager* GetInstance();
     
@@ -24,12 +26,15 @@ public:
     CYISignal<YI_KEY_CODE> OnKeyUp;
     CYISignal<YI_KEY_CODE> OnKey;
     
-protected:
-    virtual bool HandleEvent (const CYISharedPtr< CYIEventDispatcher > &pDispatcher, CYIEvent *pEvent);
+    virtual bool HandleEvent(const CYISharedPtr<CYIEventDispatcher> &pDispatcher, CYIEvent *pEvent);
     
 private:
     static InputManager* s_pInstance;
+    std::unordered_set<YI_KEY_CODE, std::hash<int> > m_downKeys;
     
+    void SetKeyDown(YI_KEY_CODE keyCode);
+    bool IsKeyDown(YI_KEY_CODE keyCode);
+    void SetKeyUp(YI_KEY_CODE keyCode);
 };
 
-#endif /* InputManager_hpp */
+#endif /* InputManager_h */

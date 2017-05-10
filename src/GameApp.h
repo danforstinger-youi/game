@@ -42,11 +42,13 @@ public:
      */
     virtual bool UserStart();
 
-    TurnManager* GetTurnManager();
+    static TurnManager* GetTurnManager();
+    
+    static Level* GetLevel();
     
 private:
     
-    GameApp * m_pInstance;
+    static GameApp * m_pInstance;
     
     TurnManager * m_pTurnManager;
     

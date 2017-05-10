@@ -14,6 +14,8 @@
 
 static const CYIString LOG_TAG("GameApp");
 
+GameApp * GameApp::m_pInstance = YI_NULL;
+
 GameApp::GameApp()
 {
     m_pInstance = this;
@@ -50,6 +52,7 @@ bool GameApp::UserInit()
     GetSceneManager()->AddScene("MainComp", m_pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
     
     m_pLevel = new Level(m_pSceneViewMain);
+    m_pLevel->Init();
 
     return true;
 
@@ -66,4 +69,9 @@ TurnManager* GameApp::GetTurnManager()
     return m_pInstance->m_pTurnManager;
 }
 
+
+Level* GameApp::GetLevel()
+{
+    return m_pInstance->m_pLevel;
+}
 /*! @} */
