@@ -3,5 +3,6 @@
   <asset-bundle root-dir="../AE/assets">
     <layout filename="Game_MainComp.layout"/>
     <layout filename="Game_Prefab.layout"/>
+    <layout filename="level.txt"/>
   </asset-bundle>
 </manifest>

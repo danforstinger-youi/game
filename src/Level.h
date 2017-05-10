@@ -12,6 +12,7 @@
 #include <vector>
 #include "Player.h"
 #include "Wall.h"
+#include "Monster.h"
 
 #include <view/YiSceneView.h>
 
@@ -24,6 +25,17 @@ public:
     Level(CYISceneView *pSceneView);
     
     void MovePlayer(int xMovement, int yMovement);
+    
+    void GenerateLevel();
+    
+    glm::vec3 IncrementX(glm::vec3 position);
+    glm::vec3 ResetX(glm::vec3 position);
+    
+    glm::vec3 IncrementY(glm::vec3 position);
+    
+    void CreateWall(glm::vec3 position);
+    void CreateMonster(glm::vec3 position);
+    void CreatePlayer(glm::vec3 position);
     
 private:
     CYISceneView *m_pSceneView;

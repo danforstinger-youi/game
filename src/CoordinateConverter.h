@@ -18,7 +18,7 @@ public:
     static int PixelsToCoordinate(const int &pixel);
     
     static glm::vec3 CoordinateToPixels(const glm::vec3 &coordinates);
-;
+
     static glm::vec3 PixelsToCoordinate(const glm::vec3 &pixels);
     
     static const int PIXEL_PER_COORD = 64;
