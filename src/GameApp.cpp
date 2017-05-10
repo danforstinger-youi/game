@@ -5,10 +5,11 @@
 #include <scenetree/YiSceneManager.h>
 #include <view/YiSceneView.h>
 #include <appium/YiWebDriverLocator.h>
+#include "Player.h"
+#include <asset/YiAssetViewTemplate.h>
+#include <import/YiViewTemplate.h>
+#include <view/YiImageView.h>
 
-/*! \addtogroup Game
-@{
-*/
 static const CYIString LOG_TAG("GameApp");
 
 GameApp::GameApp()
@@ -43,19 +44,26 @@ bool GameApp::UserInit()
     // Add the scene to the SceneManager with a layer index of 0, since this is the only scene the layer index isn't important.
     GetSceneManager()->AddScene("MainComp", pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
 
-    // Get the SpinAnimation timeline from the main composition and cache it for later use.
-    m_pSpinAnimation = pSceneViewMain->GetTimeline("SpinAnimation");
-    if(!m_pSpinAnimation)
+    //load our prefabs.
+    CYISceneView *pSceneViewPrefabs = GetSceneManager()->LoadScene("Game_Prefab.layout", CYISceneManager::SCALE_FIT, CYISceneManager::V_ALIGN_CENTER, CYISceneManager::H_ALIGN_CENTER);
+    
+    if(!pSceneViewPrefabs)
     {
-        YI_ASSERT(false, LOG_TAG, "Failed to find 'SpinAnimation' timeline.");
+        YI_ASSERT(false, LOG_TAG, "Loading scene 'Game_Prefab.layout' failed.");
         return false;
     }
-
-    // Connect to the CompletedForward signal to restart the animation when it completes.
-    m_pSpinAnimation->CompletedForward.Connect(*this, &GameApp::OnSpinAnimationCompleted, YI_CONNECTION_ASYNC);
     
-    // Start playing the timeline in a forward direction.
-    m_pSpinAnimation->StartForward();
+    CYIImageView* pPlayer;
+    pSceneViewPrefabs->FindNode<CYIImageView>(pPlayer, "Player", CYISceneView::FETCH_MANDATORY, "Could not find list");
+
+    //spawn some prefabs.
+    const CYISharedPtr<CYIAssetViewTemplate> pPlayerTemplate = pPlayer->GetViewTemplate();
+    
+    if (!pPlayerTemplate)
+    {
+        YI_ASSERT(false, LOG_TAG, "Loading template 'Player' failed.");
+        return false;
+    }
     
     return true;
 

@@ -37,7 +37,7 @@ activecomp {
     acceptslights: true
     castsshadows: false
   }
-  classname: "Wall"
+  classname: "CYIImageView"
   bgcolor {
     alpha: 1
     red: 0
@@ -45,8 +45,8 @@ activecomp {
     blue: 0.73725490196078436
   }
   properties {
-    key: "usesCustomClass"
-    value: "true"
+    key: "componentType"
+    value: "image"
   }
 }
 sources {

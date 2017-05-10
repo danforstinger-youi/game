@@ -37,7 +37,7 @@ activecomp {
     acceptslights: true
     castsshadows: false
   }
-  classname: "Player"
+  classname: "CYIImageView"
   bgcolor {
     alpha: 1
     red: 0
