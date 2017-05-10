@@ -53,5 +53,5 @@ Level::Level(CYISceneView *pSceneView)
 
 void Level::MovePlayer(int xMovement, int yMovement)
 {
-    m_pPlayer->Move(xMovement, yMovement);
+    m_pPlayer->AttemptMove(xMovement, yMovement);
 }

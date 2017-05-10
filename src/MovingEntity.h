@@ -14,7 +14,7 @@
 class MovingEntity : public Entity
 {
 public:
-    void Move(YI_INT32 x, YI_INT32 y);
+    bool AttemptMove(YI_INT32 x, YI_INT32 y);
     
 protected:
     /*!

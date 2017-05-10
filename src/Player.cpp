@@ -12,7 +12,11 @@
 
 bool Player::Init()
 {
-    InputManager::GetInstance()->OnKey.Connect(*this, &Player::OnKey);
+    MovingEntity::Init();
+    
+    YI_LOGI("Player", "Init complete");
+
+    InputManager::GetInstance()->OnKeyDown.Connect(*this, &Player::OnKey);
     
     return true;
 }
@@ -20,4 +24,29 @@ bool Player::Init()
 void Player::OnKey(YI_KEY_CODE keyCode)
 {
     YI_LOGI("Player::OnKey", "Count %d", keyCode);
+    
+    bool bDidMove = false;
+    
+    switch (keyCode)
+    {
+        case YI_KEY_ARROW_LEFT:
+            bDidMove = AttemptMove(-1,0);
+            break;
+            
+        case YI_KEY_ARROW_RIGHT:
+            bDidMove = AttemptMove(1,0);
+            break;
+            
+        case YI_KEY_ARROW_UP:
+            bDidMove = AttemptMove(0,-1);
+            break;
+            
+        case YI_KEY_ARROW_DOWN:
+            bDidMove = AttemptMove(0,1);
+            break;
+            
+        default:
+            break;
+    }
+
 }

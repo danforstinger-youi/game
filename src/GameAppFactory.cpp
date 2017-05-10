@@ -10,7 +10,7 @@
 #define APP_HEIGHT (1080)
 #else
 #define APP_WIDTH (1280)
-#define APP_HEIGHT (960)
+#define APP_HEIGHT (720)
 #endif
 
 CYIApp *AppFactory::Create()

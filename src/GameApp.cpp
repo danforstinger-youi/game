@@ -22,12 +22,6 @@ GameApp::GameApp()
 
 GameApp::~GameApp()
 {
-    delete m_pSceneViewMain;
-    m_pSceneViewMain = YI_NULL;
-    
-    delete m_pTurnManager;
-    m_pTurnManager = YI_NULL;
-    
 }
 
 bool GameApp::UserInit()
