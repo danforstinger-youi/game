@@ -15,6 +15,7 @@ class MovingEntity : public Entity
 {
 public:
     bool AttemptMove(YI_INT32 x, YI_INT32 y);
+    bool AttemptMove(YI_INT32 x, YI_INT32 y, Entity* out_collider);
     
 protected:
     /*!

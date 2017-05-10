@@ -15,7 +15,10 @@
 Level::Level(CYISceneView *pSceneView)
 {
     m_pSceneView = pSceneView;
-    
+}
+
+void Level::Init()
+{
     glm::vec3 initialPosition(0, 0, 0);
     glm::vec3 playerStartingPosition(3, 3, 3);
     
@@ -26,12 +29,12 @@ Level::Level(CYISceneView *pSceneView)
         int minY = 0;
         int maxY = squareWidth-1;
         
-        Wall *upperWall = EntityFactory::Instantiate<Wall>(WALL_PREFAB_NAME, pSceneView, initialPosition[0]+x, minY);
+        Wall *upperWall = EntityFactory::Instantiate<Wall>(WALL_PREFAB_NAME, m_pSceneView, initialPosition[0]+x, minY);
         walls.insert(walls.end(), upperWall);
         
-        Wall *lowerWall = EntityFactory::Instantiate<Wall>(WALL_PREFAB_NAME, pSceneView, initialPosition[0]+x, maxY);
+        Wall *lowerWall = EntityFactory::Instantiate<Wall>(WALL_PREFAB_NAME, m_pSceneView, initialPosition[0]+x, maxY);
         walls.insert(walls.end(), lowerWall);
-
+        
     }
     
     for (int y = 1; y < squareWidth- 1; ++y)
@@ -39,19 +42,61 @@ Level::Level(CYISceneView *pSceneView)
         int minX = 0;
         int maxX = squareWidth-1;
         
-        Wall *leftWall = EntityFactory::Instantiate<Wall>(WALL_PREFAB_NAME, pSceneView, minX, initialPosition[1]+y);
+        Wall *leftWall = EntityFactory::Instantiate<Wall>(WALL_PREFAB_NAME, m_pSceneView, minX, initialPosition[1]+y);
         walls.insert(walls.end(), leftWall);
-
         
-        Wall *rightWall = EntityFactory::Instantiate<Wall>(WALL_PREFAB_NAME, pSceneView, maxX, initialPosition[1]+y);
+        
+        Wall *rightWall = EntityFactory::Instantiate<Wall>(WALL_PREFAB_NAME, m_pSceneView, maxX, initialPosition[1]+y);
         walls.insert(walls.end(), rightWall);
-
+        
     }
     
-    m_pPlayer = EntityFactory::Instantiate<Player>(PLAYER_PREFAB_NAME, pSceneView, playerStartingPosition[0], playerStartingPosition[1]);
+    m_pPlayer = EntityFactory::Instantiate<Player>(PLAYER_PREFAB_NAME, m_pSceneView, playerStartingPosition[0], playerStartingPosition[1]);
 }
 
 void Level::MovePlayer(int xMovement, int yMovement)
 {
     m_pPlayer->AttemptMove(xMovement, yMovement);
+}
+
+
+void Level::AddEntityToLevel(Entity* entity)
+{
+    m_levelEntities.push_back(entity);
+}
+
+std::vector<Entity*> Level::GetEntitiesAtPosition(YI_INT32 posX, YI_INT32 posY)
+{
+    std::vector<Entity*> foundEntites;
+    auto iter = m_levelEntities.begin();
+    auto end = m_levelEntities.end();
+    
+    while (iter != end)
+    {
+        if(*iter != YI_NULL && (*iter)->GetX() == posX && (*iter)->GetY() == posY)
+        {
+            foundEntites.push_back(*iter);
+        }
+        iter++;
+    }
+    
+    return foundEntites;
+}
+
+
+std::vector<Entity*> Level::CheckCollisionAtPos(YI_INT32 posX, YI_INT32 posY)
+{
+    std::vector<Entity*> foundEntites = GetEntitiesAtPosition(posX, posY);
+    auto iter = foundEntites.begin();
+    auto end = foundEntites.end();
+    
+    while (iter != end)
+    {
+        if(*iter != YI_NULL && !(*iter)->GetIsCollidable())
+        {
+            foundEntites.erase(iter);
+        }
+        iter++;
+    }
+    return foundEntites;
 }

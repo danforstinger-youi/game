@@ -9,7 +9,9 @@
 #include "Entity.h"
 #include "CoordinateConverter.h"
 
-Entity::Entity() : m_pView(YI_NULL)
+Entity::Entity() :
+m_pView(YI_NULL),
+m_isCollidable(true)
 {
     
 }

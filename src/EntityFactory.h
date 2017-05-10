@@ -13,6 +13,7 @@
 #include <asset/YiAssetViewTemplate.h>
 #include <import/YiViewTemplate.h>
 #include "Entity.h"
+#include "GameApp.h"
 
 class EntityFactory
 {
@@ -45,6 +46,8 @@ public:
         entity->SetPosition(x,y);
         
         entity->Init();
+        
+        GameApp::GetLevel()->AddEntityToLevel(entity);
         
         return controller;
     }

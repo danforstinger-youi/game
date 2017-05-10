@@ -52,6 +52,7 @@ bool GameApp::UserInit()
     GetSceneManager()->AddScene("MainComp", m_pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
     
     m_pLevel = new Level(m_pSceneViewMain);
+    m_pLevel->Init();
 
     return true;
 
