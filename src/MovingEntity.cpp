@@ -17,7 +17,8 @@ bool MovingEntity::Init()
 
 void MovingEntity::Move(YI_INT32 x, YI_INT32 y)
 {
-    glm::vec3 position = m_pView->GetPosition();
+    YI_INT32 newX = GetX() + x;
+    YI_INT32 newY = GetY() + y;
     
-    SetPosition(position[0] + x, position[1] + y);
+    SetPosition(newX,newY);
 }
