@@ -40,4 +40,5 @@ void Entity::Destroy()
 {
     GameApp::GetLevel()->RemoveEntityFromLevel(this);
     GameApp::GetSceneView()->RemoveChild(m_pView);
+    bIsActive = false;
 }

@@ -23,6 +23,8 @@ bool MovingEntity::AttemptMove(YI_INT32 x, YI_INT32 y)
 
 bool MovingEntity::AttemptMove(YI_INT32 x, YI_INT32 y, Entity* out_collider)
 {
+    if (!bIsActive) return false;
+    
     YI_INT32 newX = GetX() + x;
     YI_INT32 newY = GetY() + y;
     

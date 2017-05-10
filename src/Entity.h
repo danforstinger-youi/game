@@ -36,6 +36,8 @@ public:
     virtual void TakeDamage(YI_INT32 damage) { YI_UNUSED(damage);}
 protected:
     
+    bool bIsActive = true;
+    
     CYISceneView* m_pView;
 
 private:
