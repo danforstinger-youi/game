@@ -11,6 +11,7 @@
 
 #include "MovingEntity.h"
 #include "view/YiSceneView.h"
+#include "MovingEntity.h"
 #include <signal/YiSignalHandler.h>
 
 class Player : public MovingEntity, public CYISignalHandler

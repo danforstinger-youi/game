@@ -13,12 +13,14 @@
 
 class MovingEntity : public Entity
 {
+public:
+    void Move(YI_INT32 x, YI_INT32 y);
+    
+protected:
     /*!
      \details This will be called during initialization, this is where custom views will initialize themselves.
      */
     virtual bool Init();
-
-    void Move(YI_INT32 x, YI_INT32 y);
 
 };
 

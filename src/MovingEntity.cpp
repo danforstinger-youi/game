@@ -8,6 +8,8 @@
 
 #include "MovingEntity.h"
 
+#include <glm/glm.hpp>
+
 bool MovingEntity::Init()
 {
     return true;

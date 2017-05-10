@@ -6,6 +6,7 @@
 #include <signal/YiSignalHandler.h>
 #include "TurnManager.h"
 #include "Entity.h"
+#include "Level.h"
 
 class CYISceneView;
 
@@ -50,6 +51,9 @@ private:
     TurnManager * m_pTurnManager;
     
     CYISceneView * m_pSceneViewMain;
+    
+    Level *m_pLevel;
+
     InputManager* m_pInputManager;
 };
 
