@@ -20,6 +20,9 @@ class CYISceneView;
 
  */
 /*@{*/
+
+class InputManager;
+
 class GameApp : public CYIApp, public CYISignalHandler
 {
 public:
@@ -47,6 +50,7 @@ private:
     TurnManager * m_pTurnManager;
     
     CYISceneView * m_pSceneViewMain;
+    InputManager* m_pInputManager;
 };
 
 /*!
