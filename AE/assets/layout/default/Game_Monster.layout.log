@@ -1,25 +1,25 @@
 activecomp {
-  name: "Game_Wall"
+  name: "Game_Monster"
   width: 64
   height: 64
   defaultcameradistance: 88.888885
   layer {
-    name: "wall.png"
-    id: 357
-    sourceid: 400
+    name: "monster.png"
+    id: 420
+    sourceid: 432
     transform {
       anchorPoint {
-        x: 200
-        y: 200
+        x: 67
+        y: 67
         z: 0
       }
       scale {
-        x: 0.165
-        y: 0.165
+        x: 0.51492536
+        y: 0.52985072
         z: 1
       }
       position {
-        x: 32
+        x: 32.75
         y: 31
         z: 0
       }
@@ -45,11 +45,11 @@ activecomp {
   }
 }
 sources {
-  uid: 400
+  uid: 432
   srctype: AE_IMAGE_SRC
-  name: "wall.png"
-  width: 400
-  height: 400
+  name: "monster.png"
+  width: 134
+  height: 134
   numberOfFrames: 1
   fps: 0
   loops: 1

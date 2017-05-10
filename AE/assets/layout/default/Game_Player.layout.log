@@ -9,18 +9,18 @@ activecomp {
     sourceid: 399
     transform {
       anchorPoint {
-        x: 112.5
-        y: 112.5
+        x: 67
+        y: 67
         z: 0
       }
       scale {
-        x: 0.29777777
-        y: 0.29333335
+        x: 0.49253732
+        y: 0.47761193
         z: 1
       }
       position {
-        x: 32.5
-        y: 31.5
+        x: 32
+        y: 32
         z: 0
       }
       orientation {
@@ -48,8 +48,8 @@ sources {
   uid: 399
   srctype: AE_IMAGE_SRC
   name: "guy.png"
-  width: 225
-  height: 225
+  width: 134
+  height: 134
   numberOfFrames: 1
   fps: 0
   loops: 1

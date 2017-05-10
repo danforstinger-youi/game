@@ -71,6 +71,40 @@ activecomp {
     acceptslights: true
     castsshadows: false
   }
+  layer {
+    name: "Monster"
+    id: 348
+    sourceid: 420
+    transform {
+      anchorPoint {
+        x: 32
+        y: 32
+        z: 0
+      }
+      scale {
+        x: 1
+        y: 1
+        z: 1
+      }
+      position {
+        x: 778
+        y: 386
+        z: 0
+      }
+      orientation {
+        x: 0
+        y: 0
+        z: 0
+      }
+      rotationX: 0
+      rotationY: 0
+      rotationZ: 0
+      opacity: 1
+    }
+    acceptsshadows: true
+    acceptslights: true
+    castsshadows: false
+  }
   bgcolor {
     alpha: 1
     red: 0
@@ -79,6 +113,7 @@ activecomp {
   }
   childtemplates: "Game_Player"
   childtemplates: "Game_Wall"
+  childtemplates: "Game_Monster"
 }
 sources {
   uid: 368
@@ -92,6 +127,14 @@ sources {
   uid: 357
   srctype: AE_COMP_SRC
   name: "Game_Wall.layout"
+  width: 64
+  height: 64
+  copy_source: true
+}
+sources {
+  uid: 420
+  srctype: AE_COMP_SRC
+  name: "Game_Monster.layout"
   width: 64
   height: 64
   copy_source: true

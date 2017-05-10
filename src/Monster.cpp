@@ -7,8 +7,10 @@
 //
 
 #include "Monster.h"
+#include "GameApp.h"
 
 bool Monster::Init()
 {
+
     return true;
 }

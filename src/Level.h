@@ -20,6 +20,7 @@ using std::vector;
 class Level
 {
 public:
+    
     Level(CYISceneView *pSceneView);
     
     void MovePlayer(int xMovement, int yMovement);
@@ -29,7 +30,6 @@ private:
     Player *m_pPlayer;
     
     vector<Wall*> walls;
-    
 
 };
 #endif /* Level_h */
