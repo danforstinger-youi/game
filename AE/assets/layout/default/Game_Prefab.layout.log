@@ -9,8 +9,8 @@ activecomp {
     sourceid: 368
     transform {
       anchorPoint {
-        x: 64
-        y: 64
+        x: 32
+        y: 32
         z: 0
       }
       scale {
@@ -43,8 +43,8 @@ activecomp {
     sourceid: 357
     transform {
       anchorPoint {
-        x: 64
-        y: 64
+        x: 32
+        y: 32
         z: 0
       }
       scale {
@@ -84,15 +84,15 @@ sources {
   uid: 368
   srctype: AE_COMP_SRC
   name: "Game_Player.layout"
-  width: 128
-  height: 128
+  width: 64
+  height: 64
   copy_source: true
 }
 sources {
   uid: 357
   srctype: AE_COMP_SRC
   name: "Game_Wall.layout"
-  width: 128
-  height: 128
+  width: 64
+  height: 64
   copy_source: true
 }

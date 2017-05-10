@@ -1,8 +1,8 @@
 activecomp {
   name: "Game_Wall"
-  width: 128
-  height: 128
-  defaultcameradistance: 177.77777
+  width: 64
+  height: 64
+  defaultcameradistance: 88.888885
   layer {
     name: "wall.png"
     id: 357
@@ -14,13 +14,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 0.5
-        y: 0.64
+        x: 0.275
+        y: 0.265
         z: 1
       }
       position {
-        x: 64
-        y: 64
+        x: 33
+        y: 25
         z: 0
       }
       orientation {

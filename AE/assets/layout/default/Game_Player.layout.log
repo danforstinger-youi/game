@@ -1,8 +1,8 @@
 activecomp {
   name: "Game_Player"
-  width: 128
-  height: 128
-  defaultcameradistance: 177.77777
+  width: 64
+  height: 64
+  defaultcameradistance: 88.888885
   layer {
     name: "guy.png"
     id: 368
@@ -14,13 +14,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 0.62666667
-        y: 0.57333332
+        x: 0.29777777
+        y: 0.29333335
         z: 1
       }
       position {
-        x: 64
-        y: 64
+        x: 32.5
+        y: 31.5
         z: 0
       }
       orientation {

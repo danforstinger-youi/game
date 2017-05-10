@@ -21,7 +21,7 @@ public:
 ;
     static glm::vec3 PixelsToCoordinate(const glm::vec3 &pixels);
     
-    static const int PIXEL_PER_COORD = 128;
+    static const int PIXEL_PER_COORD = 64;
 };
 
 #endif /* CoordinateConverter_h */
