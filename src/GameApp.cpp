@@ -13,7 +13,6 @@
 static const CYIString LOG_TAG("GameApp");
 
 GameApp::GameApp()
-: m_pSpinAnimation(YI_NULL)
 {
 }
 
@@ -33,9 +32,9 @@ bool GameApp::UserInit()
     
     // Load the MainComp CYISceneView. This is the main scene view for this sample application. The main scene view is loaded here in the CYIApp subclass due to the simplicity of this application.
     // Larger applications would have seperate screens each containing a main scene view with the loading handled by the screen's CYIAbstractScreenViewController subclass.
-    CYISceneView *pSceneViewMain = GetSceneManager()->LoadScene("Game_MainComp.layout", CYISceneManager::SCALE_FIT, CYISceneManager::V_ALIGN_CENTER, CYISceneManager::H_ALIGN_CENTER);
+    m_pSceneViewMain = GetSceneManager()->LoadScene("Game_MainComp.layout", CYISceneManager::SCALE_FIT, CYISceneManager::V_ALIGN_CENTER, CYISceneManager::H_ALIGN_CENTER);
     
-    if(!pSceneViewMain)
+    if(!m_pSceneViewMain)
     {
         YI_ASSERT(false, LOG_TAG, "Loading scene 'Game_MainComp.layout' failed.");
         return false;
@@ -43,14 +42,12 @@ bool GameApp::UserInit()
     
     
     // Add the scene to the SceneManager with a layer index of 0, since this is the only scene the layer index isn't important.
-    GetSceneManager()->AddScene("MainComp", pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
+    GetSceneManager()->AddScene("MainComp", m_pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
     
-    const CYISharedPtr<CYIAssetViewTemplate> pPlayerTemplate = CYIViewTemplate::GetViewTemplate("Game_Player");
-    
-    CYISceneView* pPlayer = pPlayerTemplate->BuildView(GetSceneManager());
 
-    pSceneViewMain->AddChild(pPlayer);
-    
+    CYISceneView* pPlayer = BuildPrefab("Game_Player");
+
+    YI_UNUSED(pPlayer);
     return true;
 
 //! [UserInit]
@@ -61,11 +58,16 @@ bool GameApp::UserStart()
     return true;
 }
 
-void GameApp::OnSpinAnimationCompleted()
+
+CYISceneView* GameApp::BuildPrefab(const CYIString& name)
 {
-    // Timeline has ended. Restart the animation for a continuous loop.
-    m_pSpinAnimation->StartForward();
+    const CYISharedPtr<CYIAssetViewTemplate> pTemplate = CYIViewTemplate::GetViewTemplate(name);
     
+    CYISceneView* pPrefab = pTemplate->BuildView(GetSceneManager());
+    
+    m_pSceneViewMain->AddChild(pPrefab);
+    
+    return pPrefab;
 }
 
 /*! @} */

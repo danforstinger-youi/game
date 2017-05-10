@@ -5,7 +5,7 @@
 #include <framework/YiApp.h>
 #include <signal/YiSignalHandler.h>
 
-class CYITimeline;
+class CYISceneView;
 
 /*!
  \defgroup Game Game
@@ -34,15 +34,11 @@ public:
         \sa CYIApp::UserStart
      */
     virtual bool UserStart();
-    /*!
-        \details Signal handler for the spin animation timeline completing.
-     */
-    void OnSpinAnimationCompleted();
 
+    CYISceneView* BuildPrefab(const CYIString& name);
+    
 private:
-
-    // Store a pointer to the spin animation timeline
-    CYITimeline *m_pSpinAnimation;
+    CYISceneView * m_pSceneViewMain;
 };
 
 /*!
