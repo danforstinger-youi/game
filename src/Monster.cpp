@@ -31,6 +31,9 @@ void Monster::TakeTurn()
     YI_INT32 xDiff = abs(x - playerX);
     YI_INT32 yDiff = abs(y - playerY);
     
+    //check distance to determine if we should move.
+    if (xDiff + yDiff > ACTIVATION_DIST) return;
+    
     YI_INT32 xMove = 0;
     YI_INT32 yMove = 0;
     

@@ -19,6 +19,8 @@ class Monster: public MovingEntity, public CYISignalHandler
      */
     virtual bool Init();
 
+    const YI_INT32 ACTIVATION_DIST = 5;
+    
 private:
     
     void TakeTurn();
