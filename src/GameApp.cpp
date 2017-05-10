@@ -44,20 +44,13 @@ bool GameApp::UserInit()
     
     // Add the scene to the SceneManager with a layer index of 0, since this is the only scene the layer index isn't important.
     GetSceneManager()->AddScene("MainComp", pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
+    
+    const CYISharedPtr<CYIAssetViewTemplate> pPlayerTemplate = CYIViewTemplate::GetViewTemplate("Game_Player");
+    
+    CYISceneView* pPlayer = pPlayerTemplate->BuildView(GetSceneManager());
 
-    //load our prefabs.
-    CYISceneView *pSceneViewPrefabs = GetSceneManager()->LoadScene("Game_Prefab.layout", CYISceneManager::SCALE_FIT, CYISceneManager::V_ALIGN_CENTER, CYISceneManager::H_ALIGN_CENTER);
+    pSceneViewMain->AddChild(pPlayer);
     
-    if(!pSceneViewPrefabs)
-    {
-        YI_ASSERT(false, LOG_TAG, "Loading scene 'Game_Prefab.layout' failed.");
-        return false;
-    }
-    
-    const CYISharedPtr<CYIAssetViewTemplate> pPlayerTemplate = CYIViewTemplate::GetViewTemplate("Player");
-    
-    
-
     return true;
 
 //! [UserInit]
