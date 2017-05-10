@@ -1,12 +1,12 @@
 activecomp {
-  name: "Game_Player"
+  name: "Game_Monster"
   width: 64
   height: 64
   defaultcameradistance: 88.888885
   layer {
-    name: "guy.png"
-    id: 368
-    sourceid: 399
+    name: "monster.png"
+    id: 420
+    sourceid: 432
     transform {
       anchorPoint {
         x: 67
@@ -14,13 +14,13 @@ activecomp {
         z: 0
       }
       scale {
-        x: 0.49253732
-        y: 0.47761193
+        x: 0.51492536
+        y: 0.52985072
         z: 1
       }
       position {
-        x: 32
-        y: 32
+        x: 32.75
+        y: 31
         z: 0
       }
       orientation {
@@ -45,9 +45,9 @@ activecomp {
   }
 }
 sources {
-  uid: 399
+  uid: 432
   srctype: AE_IMAGE_SRC
-  name: "guy.png"
+  name: "monster.png"
   width: 134
   height: 134
   numberOfFrames: 1
