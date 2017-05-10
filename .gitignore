@@ -1,0 +1,24 @@
+# iOS
+build/ios/*
+!build/ios/assets
+
+# Android
+build/AndroidNative/*
+!build/AndroidNative/assets
+!build/AndroidNative/src
+build/AndroidNative/src/com/quickplay/vstb/ref/VstbApplication.java
+build/AndroidNative/src/tv/youi/youiengine/CYIFoxActivity.java
+build/AndroidNative/src/tv/youi/youiengine/FoxBootActivity.java
+build/AndroidNative/src/tv/youi/youiengine/FoxTVBootActivity.java
+
+# YouiEngine
+/youiengine
+
+# Template Generated Source Files
+/src/utilities/AppsFlyerUtilities.h
+/src/utilities/LocalyticsUtilities.h
+/src/utilities/YouboraUtilities.h
+
+# Other
+.DS_Store
+*.swp
