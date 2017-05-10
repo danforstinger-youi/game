@@ -30,14 +30,32 @@ bool MovingEntity::AttemptMove(YI_INT32 x, YI_INT32 y, Entity* out_collider)
     
     if(colliders.size() > 0)
     {
+        colliders.at(0)->TakeDamage(damage);
         YI_LOGE("MovingEntity", "Entity has collided!");
-        if(out_collider != YI_NULL)
+        if(out_collider == YI_NULL)
+        {
             out_collider = colliders.at(0);
+            
+        }
         return false;
     }
+    
+    
     
     SetPosition(newX, newY);
     
     YI_LOGE("MovingEntity", "Entity has moved!");
     return true;
+}
+
+void MovingEntity::TakeDamage(YI_INT32 damage)
+{
+    YI_LOGE("MovingEntity", "Entity has taken %d damage", damage);
+    
+    hp -= damage;
+    
+    if (hp <= 0)
+    {
+        Destroy();
+    }
 }

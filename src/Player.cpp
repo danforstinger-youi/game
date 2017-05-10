@@ -19,6 +19,8 @@ bool Player::Init()
 
     InputManager::GetInstance()->OnKeyDown.Connect(*this, &Player::OnKey);
     
+    hp = 10;
+    damage = 5;
     return true;
 }
 

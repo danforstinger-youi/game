@@ -31,6 +31,9 @@ public:
     bool GetIsCollidable() { return m_isCollidable; }
     void SetIsCollidable(bool isCollidable) { m_isCollidable = isCollidable; }
     
+    void Destroy();
+    
+    virtual void TakeDamage(YI_INT32 damage) { YI_UNUSED(damage);}
 protected:
     
     CYISceneView* m_pView;

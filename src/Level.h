@@ -43,6 +43,8 @@ public:
     
     void AddEntityToLevel(Entity* entity);
     
+    void RemoveEntityFromLevel(Entity* entity);
+    
     std::vector<Entity*> GetEntitiesAtPosition(YI_INT32 posX, YI_INT32 posY);
     
     std::vector<Entity*> CheckCollisionAtPos(YI_INT32 posX, YI_INT32 posY);

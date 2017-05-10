@@ -7,6 +7,7 @@
 //
 
 #include "Entity.h"
+#include "GameApp.h"
 #include "CoordinateConverter.h"
 
 Entity::Entity() :
@@ -33,4 +34,10 @@ void Entity::SetPosition(YI_INT32 x, YI_INT32 y)
     
     //set the position of our view.
     m_pView->SetPosition(convX, convY, 0);
+}
+
+void Entity::Destroy()
+{
+    GameApp::GetLevel()->RemoveEntityFromLevel(this);
+    GameApp::GetSceneView()->RemoveChild(m_pView);
 }
