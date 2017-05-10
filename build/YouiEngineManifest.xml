@@ -1,8 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <manifest >
   <asset-bundle root-dir="../AE/assets">
     <layout filename="Game_MainComp.layout"/>
     <layout filename="Game_Prefab.layout"/>
-    <layout filename="level.txt"/>
+    <layout filename="level-0.txt"/>
+    <layout filename="level-1.txt"/>
+    <layout filename="level-2.txt"/>
   </asset-bundle>
 </manifest>

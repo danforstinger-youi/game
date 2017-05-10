@@ -20,9 +20,15 @@ Level::Level(CYISceneView *pSceneView)
 
 void Level::GenerateLevel()
 {
+    int level = std::rand();
+    
+    std::string pathString = "assets/level-";
+    pathString = pathString + std::to_string(level%3);
+    pathString = pathString + ".txt";
+    
     char tileCharacter = 0;
     
-    const char *path = "assets/level.txt";
+    const char *path = pathString.c_str();
     
     std::fstream levelFile(path);
     std::stringstream buffer;
