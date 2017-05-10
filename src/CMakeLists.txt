@@ -12,6 +12,8 @@ set(YI_REL_SRC_DIR .)
 set (YI_SRC_FILES
     ${YI_REL_SRC_DIR}/GameApp.cpp
     ${YI_REL_SRC_DIR}/GameAppFactory.cpp
+    ${YI_REL_SRC_DIR}/Entity.cpp
+    ${YI_REL_SRC_DIR}/Wall.cpp
 )
 
 set(YI_REL_PATH_TO_ROOT ../youiengine)
