@@ -151,3 +151,19 @@ std::vector<Entity*> Level::CheckCollisionAtPos(YI_INT32 posX, YI_INT32 posY)
     }
     return foundEntites;
 }
+
+
+void Level::RemoveEntityFromLevel(Entity* entity)
+{
+    auto iter = m_levelEntities.begin();
+    auto end = m_levelEntities.end();
+    
+    while (iter != end)
+    {
+        if(*iter != YI_NULL && *iter == entity)
+        {
+            m_levelEntities.erase(iter);
+        }
+        iter++;
+    }
+}

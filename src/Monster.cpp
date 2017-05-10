@@ -15,6 +15,10 @@
 bool Monster::Init()
 {
     GameApp::GetTurnManager()->BeginTurn.Connect(*this, &Monster::TakeTurn);
+    
+    damage = 4;
+    hp = 7;
+    
     return true;
 }
 

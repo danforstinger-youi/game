@@ -46,6 +46,8 @@ public:
     
     static Level* GetLevel();
     
+    static CYISceneView* GetSceneView() { return m_pInstance->m_pSceneViewMain; }
+    
 private:
     
     static GameApp * m_pInstance;
