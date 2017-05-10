@@ -7,6 +7,10 @@
 #include <appium/YiWebDriverLocator.h>
 #include "Player.h"
 #include "EntityFactory.h"
+#include <asset/YiAssetViewTemplate.h>
+#include <import/YiViewTemplate.h>
+#include <view/YiImageView.h>
+#include "InputManager.h"
 
 static const CYIString LOG_TAG("GameApp");
 
@@ -46,13 +50,13 @@ bool GameApp::UserInit()
         return false;
     }
     
+    m_pInputManager = new InputManager(this);
+    
     // Add the scene to the SceneManager with a layer index of 0, since this is the only scene the layer index isn't important.
     GetSceneManager()->AddScene("MainComp", m_pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
     
-
     Player* pPlayer = EntityFactory::Instantiate<Player>("Game_Player", m_pSceneViewMain, 2, 4);
 
-    
     YI_UNUSED(pPlayer);
     return true;
 
