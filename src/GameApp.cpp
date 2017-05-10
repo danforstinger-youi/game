@@ -14,6 +14,8 @@
 
 static const CYIString LOG_TAG("GameApp");
 
+GameApp * GameApp::m_pInstance = YI_NULL;
+
 GameApp::GameApp()
 {
     m_pInstance = this;
@@ -66,4 +68,9 @@ TurnManager* GameApp::GetTurnManager()
     return m_pInstance->m_pTurnManager;
 }
 
+
+Level* GameApp::GetLevel()
+{
+    return m_pInstance->m_pLevel;
+}
 /*! @} */

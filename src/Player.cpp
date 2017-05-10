@@ -7,7 +7,8 @@
 //
 
 #include "Player.h"
-
+#include "GameApp.h"
+#include "TurnManager.h"
 #include "InputManager.h"
 
 bool Player::Init()
@@ -47,6 +48,11 @@ void Player::OnKey(YI_KEY_CODE keyCode)
             
         default:
             break;
+    }
+    
+    if (bDidMove)
+    {
+        GameApp::GetTurnManager()->FinishTurn();
     }
 
 }
