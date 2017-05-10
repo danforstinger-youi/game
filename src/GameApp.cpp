@@ -41,6 +41,9 @@ bool GameApp::UserInit()
         return false;
     }
     
+    
+    // Add the scene to the SceneManager with a layer index of 0, since this is the only scene the layer index isn't important.
+    GetSceneManager()->AddScene("MainComp", pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
 
     //load our prefabs.
     CYISceneView *pSceneViewPrefabs = GetSceneManager()->LoadScene("Game_Prefab.layout", CYISceneManager::SCALE_FIT, CYISceneManager::V_ALIGN_CENTER, CYISceneManager::H_ALIGN_CENTER);
@@ -51,21 +54,9 @@ bool GameApp::UserInit()
         return false;
     }
     
-    CYISceneView* pPlayer;
-    pSceneViewPrefabs->FindNode<CYISceneView>(pPlayer, "Player", CYISceneView::FETCH_MANDATORY, "Could not find list");
-
-    //spawn some prefabs.
-    const CYISharedPtr<CYIAssetViewTemplate> pPlayerTemplate = pPlayer->GetViewTemplate();
+    const CYISharedPtr<CYIAssetViewTemplate> pPlayerTemplate = CYIViewTemplate::GetViewTemplate("Player");
     
-    if (!pPlayerTemplate)
-    {
-        YI_ASSERT(false, LOG_TAG, "Loading template 'Player' failed.");
-        return false;
-    }
-
     
-    // Add the scene to the SceneManager with a layer index of 0, since this is the only scene the layer index isn't important.
-    GetSceneManager()->AddScene("MainComp", pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
 
     return true;
 
