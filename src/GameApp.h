@@ -6,6 +6,7 @@
 #include <signal/YiSignalHandler.h>
 
 #include "Entity.h"
+#include "Level.h"
 
 class CYISceneView;
 
@@ -43,6 +44,8 @@ public:
 private:
     
     CYISceneView * m_pSceneViewMain;
+    
+    Level *m_pLevel;
 };
 
 /*!

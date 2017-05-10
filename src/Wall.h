@@ -10,8 +10,9 @@
 #define Wall_h
 
 #include "view/YiSceneView.h"
+#include "Entity.h"
 
-class Wall : public CYISceneView
+class Wall : public CYISceneView, public Entity
 {
     /*!
      \details This will be called during initialization, this is where custom views will initialize themselves.

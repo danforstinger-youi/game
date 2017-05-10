@@ -9,7 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
-const char* PlayerPrefabName = "Game_Player";
-const char* WallPrefabName = "Game_Wall";
+const char* PLAYER_PREFAB_NAME = "Game_Player";
+const char* WALL_PREFAB_NAME = "Game_Wall";
 
 #endif /* Constants_h */

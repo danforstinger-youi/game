@@ -13,17 +13,23 @@
 #include "Player.h"
 #include "Wall.h"
 
+#include <view/YiSceneView.h>
+
 using std::vector;
 
 class Level
 {
+public:
+    Level(CYISceneView *pSceneView);
+    
+    void MovePlayer(int xMovement, int yMovement);
+    
+private:
+    CYISceneView *m_pSceneView;
     Player *m_pPlayer;
     
     vector<Wall*> walls;
     
-public:
-    Level(Player *pPlayer);
-    
-    void MovePlayer(int xMovement, int yMovement);
+
 };
 #endif /* Level_h */

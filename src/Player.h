@@ -10,9 +10,9 @@
 #define Player_h
 
 #include "view/YiSceneView.h"
-#include "Entity.h"
+#include "MovingEntity.h"
 
-class Player : public Entity
+class Player : public MovingEntity
 {
     /*!
      \details This will be called during initialization, this is where custom views will initialize themselves.

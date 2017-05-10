@@ -43,11 +43,8 @@ bool GameApp::UserInit()
     // Add the scene to the SceneManager with a layer index of 0, since this is the only scene the layer index isn't important.
     GetSceneManager()->AddScene("MainComp", m_pSceneViewMain, 0, CYISceneManager::LAYER_OPAQUE);
     
-
-    Player* pPlayer = EntityFactory::Instantiate<Player>("Game_Player", m_pSceneViewMain, 2, 4);
-
+    m_pLevel = new Level(m_pSceneViewMain);
     
-    YI_UNUSED(pPlayer);
     return true;
 
 //! [UserInit]
