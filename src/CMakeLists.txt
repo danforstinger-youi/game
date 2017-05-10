@@ -17,6 +17,8 @@ set (YI_SRC_FILES
     ${YI_REL_SRC_DIR}/MovingEntity.cpp
     ${YI_REL_SRC_DIR}/Wall.cpp
     ${YI_REL_SRC_DIR}/EntityFactory.cpp
+    ${YI_REL_SRC_DIR}/CoordinateConverter.cpp
+    ${YI_REL_SRC_DIR}/Level.cpp
 )
 
 set(YI_REL_PATH_TO_ROOT ../youiengine)
